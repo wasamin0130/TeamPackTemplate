@@ -1,0 +1,9 @@
+# Keep LF everywhere, overriding core.autocrlf: setup.sh and the node
+# shebang scripts break under CRLF on Linux/macOS, and Node, PowerShell
+# and Markdown tooling all read LF fine on Windows.
+* text=auto eol=lf
+
+*.png binary
+*.jpeg binary
+*.jpg binary
+*.webp binary

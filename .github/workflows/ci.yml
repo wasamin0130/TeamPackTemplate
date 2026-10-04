@@ -1,0 +1,23 @@
+name: Validate Team Pack
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  validate:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: wasamin0130/TeamNest
+          # Validated against the public TeamNest 1.7.0 commit; update after revalidating this pack.
+          ref: c81bbe7b1f4de0d444517021d6afed28336df79f
+          path: .validation/teamnest
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node .validation/teamnest/bin/teamnest.mjs validate-pack .

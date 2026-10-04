@@ -1,0 +1,53 @@
+{
+  "profile": "workspace-default",
+  "description": "Default role binding hints. Add the names your agents or panes use.",
+  "bindings": [
+    {
+      "roleId": "orchestrator",
+      "match": [
+        "orchestrator",
+        "lead",
+        "coordinator"
+      ]
+    },
+    {
+      "roleId": "architect",
+      "match": [
+        "architect",
+        "design"
+      ]
+    },
+    {
+      "roleId": "implementer",
+      "match": [
+        "implementer",
+        "developer",
+        "coder"
+      ]
+    },
+    {
+      "roleId": "reviewer",
+      "match": [
+        "reviewer",
+        "review",
+        "checker"
+      ]
+    },
+    {
+      "roleId": "ux-designer",
+      "match": [
+        "ux",
+        "ui",
+        "designer"
+      ]
+    },
+    {
+      "roleId": "tester",
+      "match": [
+        "tester",
+        "qa",
+        "test"
+      ]
+    }
+  ]
+}

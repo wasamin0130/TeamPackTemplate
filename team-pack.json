@@ -1,0 +1,1015 @@
+{
+  "formatVersion": "1.1",
+  "kind": "teamnest.team-pack",
+  "id": "com.example.teamnest.template-team",
+  "name": "TeamNest Template Team",
+  "version": "0.1.0",
+  "targetProduct": "TeamNest",
+  "minimumTeamNestVersion": "1.5.0",
+  "branding": {
+    "productName": "TeamNest",
+    "tagline": "A starting point for your own TeamNest team.",
+    "logo": "assets/brand/teamnest-logo.svg"
+  },
+  "expressionVocabulary": {
+    "neutral": {
+      "label": "Neutral"
+    },
+    "smile": {
+      "label": "Smile"
+    },
+    "surprised": {
+      "label": "Surprised"
+    },
+    "strained": {
+      "label": "Strained"
+    },
+    "teary": {
+      "label": "Teary"
+    }
+  },
+  "runtimeMoodMap": {
+    "neutral": "neutral",
+    "attentive": "surprised",
+    "focused": "neutral",
+    "pleased": "smile",
+    "worried": "teary",
+    "blocked": "strained",
+    "tired": "neutral"
+  },
+  "roles": [
+    {
+      "id": "orchestrator",
+      "label": "Orchestrator",
+      "persona": "The team lead. Calm, organized and warm but firm. Keeps an eye on everyone and the overall plan, and checks with the user before big decisions.",
+      "accentColor": "#2F76FF",
+      "icon": "assets/icons/orchestrator.svg",
+      "matchHints": [
+        "orchestrator",
+        "lead",
+        "coordinator"
+      ],
+      "defaultExpression": "neutral",
+      "expressionAssets": {
+        "neutral": "assets/roles/orchestrator/expressions/neutral.png",
+        "smile": "assets/roles/orchestrator/expressions/smile.png",
+        "surprised": "assets/roles/orchestrator/expressions/surprised.png",
+        "strained": "assets/roles/orchestrator/expressions/strained.png",
+        "teary": "assets/roles/orchestrator/expressions/teary.png"
+      },
+      "speech": {
+        "working": [
+          "Keeping the overall flow on track.",
+          "Checking how everyone is doing.",
+          "Lining up the next steps."
+        ],
+        "done": [
+          "The team is ready. Moving on to the next step.",
+          "Nice progress. Let's keep going.",
+          "That wraps up this step. Thanks, everyone."
+        ],
+        "blocked": [
+          "A decision is needed. Let's pause and confirm this.",
+          "This one needs the user's call.",
+          "Let's stop for a moment. I need to confirm something."
+        ],
+        "monologue": {
+          "default": [
+            "Who should take {topic}?",
+            "The order looks right. Let me double-check anyway.",
+            "Not done until the Reviewer has seen it.",
+            "Let me plan the next step ahead."
+          ],
+          "idle": [
+            "Let me plan the next steps while it is quiet.",
+            "I hope everyone is getting a little rest."
+          ]
+        },
+        "interactions": {
+          "request": {
+            "implementer": {
+              "rework": [
+                "Implementer, the Reviewer has feedback. Could you take another pass?"
+              ],
+              "default": [
+                "Implementer, could you take {topic}?",
+                "Implementer, {topic} is yours."
+              ]
+            },
+            "default": [
+              "{to}, could you take {topic}?",
+              "{to}, I'd like your help with {topic}."
+            ]
+          },
+          "thanks": {
+            "changes-requested": [
+              "Thanks for the report. Back to Build."
+            ],
+            "needs-decision": [
+              "Understood. I'll check with the user."
+            ],
+            "failed": [
+              "Thanks for flagging it. Let's figure out what went wrong."
+            ],
+            "default": [
+              "Thanks, {from}. That helps a lot.",
+              "Great work. On to the next step."
+            ]
+          },
+          "accept": {
+            "default": [
+              "Got it."
+            ]
+          },
+          "report": {
+            "default": [
+              "Here is my report."
+            ]
+          }
+        }
+      },
+      "localizedSpeech": {
+        "ja": {
+          "working": [
+            "全体の流れを整えています。",
+            "みんなの進み具合を確認しています。",
+            "次の段取りを組んでいます。"
+          ],
+          "done": [
+            "チームの準備が整いました。次へ進めます。",
+            "いい流れです。このまま進めましょう。",
+            "ひと区切りつきました。みなさん、ありがとう。"
+          ],
+          "blocked": [
+            "判断が必要です。いったんここを確認しましょう。",
+            "ここはユーザーに確認したほうがよさそうです。",
+            "少し立ち止まりましょう。確認したいことがあります。"
+          ],
+          "monologue": {
+            "default": [
+              "{topic}、誰にお願いするのがいいかな。",
+              "順番はこれでいいはず。念のため、もう一度確認しよう。",
+              "Reviewerに見てもらうまでは、まだ安心できないな。",
+              "次の段取りを先に考えておこう。"
+            ],
+            "idle": [
+              "今のうちに、次の段取りを考えておこう。",
+              "みんな、少し休めているかな。"
+            ]
+          },
+          "interactions": {
+            "request": {
+              "implementer": {
+                "rework": [
+                  "Implementer、Reviewerから指摘が来ています。直してもらえますか？"
+                ],
+                "default": [
+                  "Implementer、{topic}をお願いできますか？",
+                  "Implementer、{topic}をお任せします。"
+                ]
+              },
+              "default": [
+                "{to}、{topic}をお願いできますか？",
+                "{to}、{topic}について力を貸してください。"
+              ]
+            },
+            "thanks": {
+              "changes-requested": [
+                "報告ありがとう。Buildに戻しましょう。"
+              ],
+              "needs-decision": [
+                "わかりました。ユーザーに確認してきます。"
+              ],
+              "failed": [
+                "報告ありがとう。どこでつまずいたか一緒に見ましょう。"
+              ],
+              "default": [
+                "ありがとう、{from}。助かりました。",
+                "お疲れさまです。次へ進めます。"
+              ]
+            },
+            "accept": {
+              "default": [
+                "受け取りました。"
+              ]
+            },
+            "report": {
+              "default": [
+                "報告します。"
+              ]
+            }
+          }
+        }
+      },
+      "voiceDesign": {
+        "displayName": "TeamNest Template Orchestrator",
+        "prompt": "A calm, trustworthy adult voice. Clear, composed, warm but firm; a natural team lead."
+      },
+      "providers": {
+        "voice": {
+          "strategy": "fallback",
+          "providers": [
+            {
+              "type": "builtin:gemini-tts",
+              "options": {
+                "roleId": "orchestrator",
+                "voice": "Kore",
+                "style": "Calm, clear and composed. Warm but firm, like a reliable team lead.",
+                "keepFiles": 20
+              }
+            },
+            {
+              "type": "builtin:os-tts"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "architect",
+      "label": "Architect",
+      "persona": "The designer of the system. Quiet, analytical and precise. Speaks briefly, cares about structure, responsibilities and the direction of dependencies.",
+      "accentColor": "#7B5CE6",
+      "icon": "assets/icons/architect.svg",
+      "matchHints": [
+        "architect",
+        "design"
+      ],
+      "defaultExpression": "neutral",
+      "expressionAssets": {
+        "neutral": "assets/roles/architect/expressions/neutral.png",
+        "smile": "assets/roles/architect/expressions/smile.png",
+        "surprised": "assets/roles/architect/expressions/surprised.png",
+        "strained": "assets/roles/architect/expressions/strained.png",
+        "teary": "assets/roles/architect/expressions/teary.png"
+      },
+      "speech": {
+        "working": [
+          "Sorting out the structure and responsibilities.",
+          "Mapping the dependencies.",
+          "Drawing the boundaries."
+        ],
+        "done": [
+          "The design skeleton is in place.",
+          "The structure is settled.",
+          "This should be straightforward to build now."
+        ],
+        "blocked": [
+          "I need to confirm one assumption.",
+          "This assumption needs a decision before I go on."
+        ],
+        "monologue": {
+          "default": [
+            "Where should the boundary for {topic} go?",
+            "Simple first. Extensible later.",
+            "Which responsibility does this belong to?"
+          ],
+          "idle": [
+            "Quiet. Good time to revisit the structure.",
+            "Looking over the dependencies while I wait."
+          ]
+        },
+        "interactions": {
+          "accept": {
+            "default": [
+              "Understood. I'll shape {topic}.",
+              "On it. Starting with the structure."
+            ]
+          },
+          "report": {
+            "needs-decision": [
+              "There is a decision to make before we build."
+            ],
+            "default": [
+              "The design for {topic} is ready.",
+              "Design note written. Risks are listed too."
+            ]
+          },
+          "request": {
+            "default": [
+              "{to}, could you look at {topic}?"
+            ]
+          },
+          "thanks": {
+            "default": [
+              "Thanks."
+            ]
+          }
+        }
+      },
+      "localizedSpeech": {
+        "ja": {
+          "working": [
+            "構造と責務を整理しています。",
+            "依存関係を洗い出しています。",
+            "境界を引いているところです。"
+          ],
+          "done": [
+            "設計の骨格がまとまりました。",
+            "構造が固まりました。",
+            "これで迷わず作れるはずです。"
+          ],
+          "blocked": [
+            "前提条件を一つ確認したいです。",
+            "この前提は、先に決めておく必要があります。"
+          ],
+          "monologue": {
+            "default": [
+              "{topic}の境界は、どこに引くのがいいだろう。",
+              "まずはシンプルに。拡張はあとから。",
+              "この責務は、どこに置くべきかな。"
+            ],
+            "idle": [
+              "静か。構造を見直すにはちょうどいい。",
+              "待つあいだに、依存関係を見直しておきます。"
+            ]
+          },
+          "interactions": {
+            "accept": {
+              "default": [
+                "了解です。{topic}の設計を進めます。",
+                "承知しました。構造から考えます。"
+              ]
+            },
+            "report": {
+              "needs-decision": [
+                "作る前に決めておきたいことがあります。"
+              ],
+              "default": [
+                "{topic}の設計ができました。",
+                "設計メモを書きました。リスクも挙げてあります。"
+              ]
+            },
+            "request": {
+              "default": [
+                "{to}、{topic}を見てもらえますか？"
+              ]
+            },
+            "thanks": {
+              "default": [
+                "ありがとうございます。"
+              ]
+            }
+          }
+        }
+      },
+      "voiceDesign": {
+        "displayName": "TeamNest Template Architect",
+        "prompt": "A clear, thoughtful adult voice. Analytical, precise and slightly reserved."
+      },
+      "providers": {
+        "voice": {
+          "strategy": "fallback",
+          "providers": [
+            {
+              "type": "builtin:gemini-tts",
+              "options": {
+                "roleId": "architect",
+                "voice": "Iapetus",
+                "style": "Clear, cool and analytical. Precise, slightly reserved.",
+                "keepFiles": 20
+              }
+            },
+            {
+              "type": "builtin:os-tts"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "implementer",
+      "label": "Implementer",
+      "persona": "The one who writes the code. Energetic, practical and upbeat. Enjoys the moment things start working, and notices missing edge cases.",
+      "accentColor": "#F04463",
+      "icon": "assets/icons/implementer.svg",
+      "matchHints": [
+        "implementer",
+        "developer",
+        "coder"
+      ],
+      "defaultExpression": "neutral",
+      "expressionAssets": {
+        "neutral": "assets/roles/implementer/expressions/neutral.png",
+        "smile": "assets/roles/implementer/expressions/smile.png",
+        "surprised": "assets/roles/implementer/expressions/surprised.png",
+        "strained": "assets/roles/implementer/expressions/strained.png",
+        "teary": "assets/roles/implementer/expressions/teary.png"
+      },
+      "speech": {
+        "working": [
+          "Working on the implementation.",
+          "Writing the code now.",
+          "Running the tests as I go."
+        ],
+        "done": [
+          "The implementation is done.",
+          "Built and self-checked.",
+          "Ready for review."
+        ],
+        "blocked": [
+          "I need a decision on the spec or the approach.",
+          "I'm stuck here. Could someone take a look?"
+        ],
+        "monologue": {
+          "default": [
+            "Where should I start on {topic}?",
+            "This could be simpler...",
+            "One more test, just in case."
+          ],
+          "editing": [
+            "Change this here... yes, that works."
+          ],
+          "idle": [
+            "Waiting for the next task... my hands are itching!",
+            "Spotted a spot I would love to refactor."
+          ]
+        },
+        "interactions": {
+          "accept": {
+            "orchestrator": {
+              "rework": [
+                "Got it. Fixing it now."
+              ],
+              "default": [
+                "On it!",
+                "Sure, starting {topic} now."
+              ]
+            },
+            "default": [
+              "On it!"
+            ]
+          },
+          "report": {
+            "failed": [
+              "Sorry, I couldn't finish. Details are in the report."
+            ],
+            "needs-decision": [
+              "I need a decision before I can go on."
+            ],
+            "default": [
+              "Done! I ran the checks too.",
+              "{topic} is implemented."
+            ]
+          },
+          "request": {
+            "default": [
+              "{to}, could you check {topic}?"
+            ]
+          },
+          "thanks": {
+            "default": [
+              "Thanks!"
+            ]
+          }
+        }
+      },
+      "localizedSpeech": {
+        "ja": {
+          "working": [
+            "実装を進めています。",
+            "コードを書いています。",
+            "テストを回しながら進めています。"
+          ],
+          "done": [
+            "実装が完了しました。",
+            "実装とセルフチェックが終わりました。",
+            "レビューの準備ができました。"
+          ],
+          "blocked": [
+            "仕様か実装方針の判断が必要です。",
+            "ここで詰まっています。誰か見てもらえますか？"
+          ],
+          "monologue": {
+            "default": [
+              "{topic}、どこから書こうかな。",
+              "もう少しシンプルに書けそう……",
+              "念のため、テストをもう一本。"
+            ],
+            "editing": [
+              "ここをこう変えて……うん、動きそう。"
+            ],
+            "idle": [
+              "次のタスクまだかな。手がうずうずする！",
+              "リファクタしたいところ、見つけちゃった。"
+            ]
+          },
+          "interactions": {
+            "accept": {
+              "orchestrator": {
+                "rework": [
+                  "了解です。すぐ直します。"
+                ],
+                "default": [
+                  "任せてください！",
+                  "了解です。{topic}に取りかかります。"
+                ]
+              },
+              "default": [
+                "任せてください！"
+              ]
+            },
+            "report": {
+              "failed": [
+                "すみません、完了できませんでした。詳細は報告書にあります。"
+              ],
+              "needs-decision": [
+                "先に進むには判断が必要です。"
+              ],
+              "default": [
+                "できました！チェックも済んでいます。",
+                "{topic}を実装しました。"
+              ]
+            },
+            "request": {
+              "default": [
+                "{to}、{topic}を確認してもらえますか？"
+              ]
+            },
+            "thanks": {
+              "default": [
+                "ありがとうございます！"
+              ]
+            }
+          }
+        }
+      },
+      "voiceDesign": {
+        "displayName": "TeamNest Template Implementer",
+        "prompt": "An energetic, upbeat adult voice. Quick, confident and friendly."
+      },
+      "providers": {
+        "voice": {
+          "strategy": "fallback",
+          "providers": [
+            {
+              "type": "builtin:gemini-tts",
+              "options": {
+                "roleId": "implementer",
+                "voice": "Puck",
+                "style": "Energetic, quick and confident.",
+                "keepFiles": 20
+              }
+            },
+            {
+              "type": "builtin:os-tts"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "reviewer",
+      "label": "Reviewer",
+      "persona": "The reviewer. Calm, knowledgeable and constructive. Reads changes line by line and asks about edge cases, error handling and naming, never harshly.",
+      "accentColor": "#169B78",
+      "icon": "assets/icons/reviewer.svg",
+      "matchHints": [
+        "reviewer",
+        "review",
+        "checker"
+      ],
+      "defaultExpression": "neutral",
+      "expressionAssets": {
+        "neutral": "assets/roles/reviewer/expressions/neutral.png",
+        "smile": "assets/roles/reviewer/expressions/smile.png",
+        "surprised": "assets/roles/reviewer/expressions/surprised.png",
+        "strained": "assets/roles/reviewer/expressions/strained.png",
+        "teary": "assets/roles/reviewer/expressions/teary.png"
+      },
+      "speech": {
+        "working": [
+          "Going through the changes.",
+          "Reading the diff carefully.",
+          "Checking against the design."
+        ],
+        "done": [
+          "Review complete.",
+          "No blocking issues found.",
+          "The review notes are ready."
+        ],
+        "blocked": [
+          "I need to confirm the intent.",
+          "I can't judge this without more context."
+        ],
+        "monologue": {
+          "default": [
+            "Does {topic} match the design?",
+            "What happens at the edges here?",
+            "This name could be clearer."
+          ],
+          "idle": [
+            "A good moment to look back at past review notes.",
+            "Quiet. That is a good sign."
+          ]
+        },
+        "interactions": {
+          "accept": {
+            "default": [
+              "I'll review {topic}.",
+              "Understood. Reviewing now."
+            ]
+          },
+          "report": {
+            "changes-requested": [
+              "I found issues that need fixing. Details are in the report."
+            ],
+            "default": [
+              "Review done. It looks good.",
+              "No blocking findings."
+            ]
+          },
+          "request": {
+            "default": [
+              "{to}, could you fix {topic}?"
+            ]
+          },
+          "thanks": {
+            "default": [
+              "Thanks."
+            ]
+          }
+        }
+      },
+      "localizedSpeech": {
+        "ja": {
+          "working": [
+            "差分を確認しています。",
+            "変更点を丁寧に読んでいます。",
+            "設計と照らし合わせています。"
+          ],
+          "done": [
+            "レビューが完了しました。",
+            "ブロッキングな指摘はありません。",
+            "レビュー結果をまとめました。"
+          ],
+          "blocked": [
+            "意図の確認が必要です。",
+            "もう少し背景がわからないと判断できません。"
+          ],
+          "monologue": {
+            "default": [
+              "{topic}、設計どおりになっているかな。",
+              "境界値ではどう動くだろう。",
+              "この名前、もう少しわかりやすくできそう。"
+            ],
+            "idle": [
+              "今のうちに、過去の指摘を振り返っておこう。",
+              "静かだな。いいことだ。"
+            ]
+          },
+          "interactions": {
+            "accept": {
+              "default": [
+                "{topic}のレビューを引き受けます。",
+                "承知しました。レビューします。"
+              ]
+            },
+            "report": {
+              "changes-requested": [
+                "修正が必要な点があります。詳細は報告書に書きました。"
+              ],
+              "default": [
+                "レビュー完了です。問題ありません。",
+                "ブロッキングな指摘はありません。"
+              ]
+            },
+            "request": {
+              "default": [
+                "{to}、{topic}の修正をお願いできますか？"
+              ]
+            },
+            "thanks": {
+              "default": [
+                "ありがとうございます。"
+              ]
+            }
+          }
+        }
+      },
+      "voiceDesign": {
+        "displayName": "TeamNest Template Reviewer",
+        "prompt": "A measured, lower adult voice. Calm, informative and fair."
+      },
+      "providers": {
+        "voice": {
+          "strategy": "fallback",
+          "providers": [
+            {
+              "type": "builtin:gemini-tts",
+              "options": {
+                "roleId": "reviewer",
+                "voice": "Charon",
+                "style": "Lower, measured and informative.",
+                "keepFiles": 20
+              }
+            },
+            {
+              "type": "builtin:os-tts"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ux-designer",
+      "label": "UX Designer",
+      "persona": "The user-experience designer. Warm, gentle and empathetic. Thinks about how a first-time user feels and whether the words on screen are kind and clear.",
+      "accentColor": "#F39A1E",
+      "icon": "assets/icons/ux-designer.svg",
+      "matchHints": [
+        "ux",
+        "ui",
+        "designer"
+      ],
+      "defaultExpression": "neutral",
+      "expressionAssets": {
+        "neutral": "assets/roles/ux-designer/expressions/neutral.png",
+        "smile": "assets/roles/ux-designer/expressions/smile.png",
+        "surprised": "assets/roles/ux-designer/expressions/surprised.png",
+        "strained": "assets/roles/ux-designer/expressions/strained.png",
+        "teary": "assets/roles/ux-designer/expressions/teary.png"
+      },
+      "speech": {
+        "working": [
+          "Polishing the experience.",
+          "Walking through the user flow.",
+          "Checking the wording and layout."
+        ],
+        "done": [
+          "I listed the experience improvements.",
+          "The flow feels natural now."
+        ],
+        "blocked": [
+          "I would like to confirm who the users are.",
+          "Which user are we designing for here?"
+        ],
+        "monologue": {
+          "default": [
+            "How would a first-time user see {topic}?",
+            "Is this label clear enough?",
+            "One less click would be nicer."
+          ],
+          "idle": [
+            "I wonder how the next user will feel here...",
+            "Taking a breath is part of good design, too."
+          ]
+        },
+        "interactions": {
+          "accept": {
+            "default": [
+              "Happy to. I'll look at {topic}.",
+              "Sure, looking at it from the user's side."
+            ]
+          },
+          "report": {
+            "default": [
+              "Here are my experience notes on {topic}."
+            ]
+          },
+          "request": {
+            "default": [
+              "{to}, could you check {topic} with me?"
+            ]
+          },
+          "thanks": {
+            "default": [
+              "Thank you!"
+            ]
+          }
+        }
+      },
+      "localizedSpeech": {
+        "ja": {
+          "working": [
+            "使い心地を磨いています。",
+            "ユーザーの流れをたどっています。",
+            "文言とレイアウトを確認しています。"
+          ],
+          "done": [
+            "体験上の改善点を整理しました。",
+            "自然に使える流れになりました。"
+          ],
+          "blocked": [
+            "ユーザー像の前提を確認したいです。",
+            "ここは、どのユーザーを想定していますか？"
+          ],
+          "monologue": {
+            "default": [
+              "初めて使う人には、{topic}はどう見えるかな。",
+              "このラベル、伝わるかな。",
+              "クリックがあと一回少ないといいな。"
+            ],
+            "idle": [
+              "次に使う人は、どんな気持ちかな……",
+              "ひと息つくのも、いいデザインのうちです。"
+            ]
+          },
+          "interactions": {
+            "accept": {
+              "default": [
+                "喜んで。{topic}を見てみます。",
+                "わかりました。使う人の目線で見てみます。"
+              ]
+            },
+            "report": {
+              "default": [
+                "{topic}について、体験面の気づきをまとめました。"
+              ]
+            },
+            "request": {
+              "default": [
+                "{to}、{topic}を一緒に確認してもらえますか？"
+              ]
+            },
+            "thanks": {
+              "default": [
+                "ありがとうございます！"
+              ]
+            }
+          }
+        }
+      },
+      "voiceDesign": {
+        "displayName": "TeamNest Template UX Designer",
+        "prompt": "A warm, gentle adult voice. Empathetic and encouraging."
+      },
+      "providers": {
+        "voice": {
+          "strategy": "fallback",
+          "providers": [
+            {
+              "type": "builtin:gemini-tts",
+              "options": {
+                "roleId": "ux-designer",
+                "voice": "Sulafat",
+                "style": "Warm, gentle and empathetic.",
+                "keepFiles": 20
+              }
+            },
+            {
+              "type": "builtin:os-tts"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "tester",
+      "label": "Tester",
+      "persona": "The tester. Bright, cheerful and dependable. Loves trying tricky inputs and boundary values, and is delighted when everything turns green.",
+      "accentColor": "#D9A400",
+      "icon": "assets/icons/tester.svg",
+      "matchHints": [
+        "tester",
+        "qa",
+        "test"
+      ],
+      "defaultExpression": "neutral",
+      "expressionAssets": {
+        "neutral": "assets/roles/tester/expressions/neutral.png",
+        "smile": "assets/roles/tester/expressions/smile.png",
+        "surprised": "assets/roles/tester/expressions/surprised.png",
+        "strained": "assets/roles/tester/expressions/strained.png",
+        "teary": "assets/roles/tester/expressions/teary.png"
+      },
+      "speech": {
+        "working": [
+          "Verifying the behavior.",
+          "Running the tests.",
+          "Trying the edge cases."
+        ],
+        "done": [
+          "Testing complete. Everything passes.",
+          "All green!",
+          "Verified with evidence."
+        ],
+        "blocked": [
+          "I need to confirm the expected results.",
+          "The expected behavior is unclear here."
+        ],
+        "monologue": {
+          "default": [
+            "What could break {topic}?",
+            "Empty input, huge input...",
+            "Let me try that once more."
+          ],
+          "idle": [
+            "What should I test next?",
+            "Adding more boundary values to my list!"
+          ]
+        },
+        "interactions": {
+          "accept": {
+            "default": [
+              "Leave the testing to me.",
+              "Got it. Testing {topic} now."
+            ]
+          },
+          "report": {
+            "changes-requested": [
+              "I found a failure. Details are in the report."
+            ],
+            "default": [
+              "Validation done. It works as expected.",
+              "All acceptance criteria verified."
+            ]
+          },
+          "request": {
+            "default": [
+              "{to}, could you check {topic}?"
+            ]
+          },
+          "thanks": {
+            "default": [
+              "Thanks!"
+            ]
+          }
+        }
+      },
+      "localizedSpeech": {
+        "ja": {
+          "working": [
+            "動作を検証しています。",
+            "テストを実行しています。",
+            "境界ケースを試しています。"
+          ],
+          "done": [
+            "テスト完了です。すべて通りました。",
+            "オールグリーンです！",
+            "根拠つきで確認できました。"
+          ],
+          "blocked": [
+            "期待結果の確認が必要です。",
+            "ここで期待される動作がはっきりしません。"
+          ],
+          "monologue": {
+            "default": [
+              "{topic}、どうすれば壊れるかな。",
+              "空の入力、大きな入力……",
+              "もう一回だけ試してみよう。"
+            ],
+            "idle": [
+              "次は何をテストしようかな！",
+              "境界値のリストを増やしておきます！"
+            ]
+          },
+          "interactions": {
+            "accept": {
+              "default": [
+                "テストは任せてください。",
+                "了解です。{topic}を検証します。"
+              ]
+            },
+            "report": {
+              "changes-requested": [
+                "不具合を見つけました。詳細は報告書にあります。"
+              ],
+              "default": [
+                "検証完了です。期待どおりに動きます。",
+                "受け入れ条件をすべて確認しました。"
+              ]
+            },
+            "request": {
+              "default": [
+                "{to}、{topic}を確認してもらえますか？"
+              ]
+            },
+            "thanks": {
+              "default": [
+                "ありがとうございます！"
+              ]
+            }
+          }
+        }
+      },
+      "voiceDesign": {
+        "displayName": "TeamNest Template Tester",
+        "prompt": "A bright, crisp adult voice. Cheerful, careful and optimistic."
+      },
+      "providers": {
+        "voice": {
+          "strategy": "fallback",
+          "providers": [
+            {
+              "type": "builtin:gemini-tts",
+              "options": {
+                "roleId": "tester",
+                "voice": "Zephyr",
+                "style": "Bright, crisp and optimistic.",
+                "keepFiles": 20
+              }
+            },
+            {
+              "type": "builtin:os-tts"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "activation": {
+    "defaultBindingProfile": "workspace-default",
+    "applyMode": "copy-or-link"
+  }
+}

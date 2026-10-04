@@ -1,0 +1,42 @@
+{
+  "providers": {
+    "emotion": {
+      "type": "builtin:emotion-rules"
+    },
+    "dialogue": {
+      "type": "builtin:dialogue-templates"
+    },
+    "avatar": {
+      "type": "builtin:avatar-pack"
+    },
+    "voice": {
+      "type": "builtin:os-tts"
+    }
+  },
+  "presentation": {
+    "metadata": {
+      "enabled": true
+    },
+    "graphics": {
+      "enabled": true,
+      "gridCols": 14,
+      "gridRows": 8,
+      "layerId": "teamnest-avatar",
+      "zIndex": 1
+    },
+    "labelMode": "role",
+    "voice": {
+      "enabled": true,
+      "on": [
+        "done",
+        "blocked"
+      ],
+      "minGapMs": 15000,
+      "conversationGapMs": 1000
+    },
+    "interactions": {
+      "enabled": true,
+      "ttlMs": 8000
+    }
+  }
+}
