@@ -115,6 +115,8 @@ Out of the box, TeamNest speaks with your OS text-to-speech. Each role also decl
 
 ## Sharing your pack
 
+Made your own team? Please share it. Post it in [Show and tell](https://github.com/wasamin0130/TeamNest/discussions/categories/show-and-tell) on TeamNest's GitHub Discussions: a screenshot of your team or a link to your pack is plenty. Before you publish it:
+
 - Keep the pack data only: TeamNest rejects packs that try to run commands, load code, or choose network endpoints.
 - Never commit API keys.
 - Make sure you have the rights to every image and voice you include.
@@ -232,6 +234,8 @@ TeamPackTemplate/
 標準では、OSの読み上げ機能で話します。各RoleにはGemini TTSの声も設定してあり、`GEMINI_API_KEY` を設定すると自動的に使われます。詳しくは[Voice Provider](https://github.com/wasamin0130/TeamNest/blob/main/docs/VOICE-PROVIDERS.md#日本語)を参照してください。
 
 ## Packを公開するときは
+
+自分のチームを作ったら、ぜひ共有してください。TeamNestのGitHub Discussionsの[Show and tell](https://github.com/wasamin0130/TeamNest/discussions/categories/show-and-tell)に投稿してください。チームのスクリーンショットや、Packへのリンクだけで十分です。公開する前に、次の点を確かめてください。
 
 - Packはデータだけにしてください。コマンドの実行、コードの読み込み、通信先の指定をしようとするPackは、TeamNestが拒否します。
 - APIキーをコミットしないでください。
